@@ -11,7 +11,7 @@ HOMEPAGE="http://arian.tarumian.am/"
 SRC_URI="http://arian.am/arnamu.zip -> ${P}.zip"
 LICENSE="free-noncomm"
 SLOT="0"
-KEYWORDS="amd64 arm arm64 ppc ppc64 x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~ppc ~ppc64 ~x86"
 IUSE=""
 RESTRICT="mirror"
 
