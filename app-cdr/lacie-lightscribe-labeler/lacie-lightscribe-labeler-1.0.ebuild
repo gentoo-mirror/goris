@@ -1,12 +1,15 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header$
+# $Id$
+
+EAPI=5
 
 inherit rpm
 
 DESCRIPTION="LaCie LightScribe Labeler 4L"
 HOMEPAGE="http://www.lacie.com/us/products/product.htm?pid=10803"
-SRC_URI="http://www.lacie.com/download/drivers/4L-1.0-r6.i586.rpm"
+SRC_URI="http://www.lacie.com/files/lacie-content/download/drivers/LaCie%20LightScribe%20Labeler%201.0%20Linux.rpm -> ${P}.rpm
+	http://freenet.am/~v/distfiles/lacie-lightscribe-labeler-1.0.rpm"
 LICENSE=""
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
@@ -33,15 +36,9 @@ RDEPEND="virtual/libc
 	app-cdr/lightscribe
 	"
 
-src_unpack() {
-	rpm_src_unpack
-}
-
-src_compile() { :; }
+S="${WORKDIR}"
 
 src_install() {
-	cd ${WORKDIR}
-
 	# we don't like /usr/4L, binary
 	# stuff shall go to /opt.
 	dodir   /opt/${PN}
@@ -69,6 +66,9 @@ src_install() {
 	dodoc  ./usr/4L/doc/4L_User_Manual.pdf
 	dosym   /opt/${PN}/4L-cli /usr/bin/4L-cli
 	dosym   /opt/${PN}/4L-gui-wrapper.sh /usr/bin/4L-gui
+	dodir   /opt/${PN}/icons
+	insinto /opt/${PN}/icons
+	doins   ${FILESDIR}/${PN}.png
 	insinto /usr/share/applications/
 	doins   ${FILESDIR}/${PN}.desktop
 }
