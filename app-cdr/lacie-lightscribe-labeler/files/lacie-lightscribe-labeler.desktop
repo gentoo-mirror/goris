@@ -1,9 +1,9 @@
 [Desktop Entry]
+Type=Application
+Version=1.0
 Name=LaCie LightScribe Labeler 4L
 Comment=LaCie LightScribe Optical Media Labeling Software
 Exec=4L-gui
-Icon=/usr/share/apps/k3b/icons/hicolor/48x48/actions/cdburn.png
-Type=Application
+Icon=/opt/lacie-lightscribe-labeler/icons/lacie-lightscribe-labeler.png
 Terminal=false
-Encoding=UTF-8
-Categories=Application;AudioVideo;DiscBurning;System
+Categories=Graphics;System;
